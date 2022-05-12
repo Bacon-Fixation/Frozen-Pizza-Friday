@@ -1,0 +1,12 @@
+{
+  "name": "frozen-pizza-friday",
+  "author": "Bacon-Fixation",
+  "version": "0.0.1",
+  "main": "index.js",
+  "dependencies": {
+    "dank-twitch-irc": "^4.3.0",
+    "got": "^11.8.2",
+    "no-swears": "git://github.com/Bacon-Fixation/no-swears",
+    "words-count": "^2.0.2"
+  }
+}
