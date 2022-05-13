@@ -1,4 +1,5 @@
 # Frozen-Pizza-Friday
+![lURCVti](https://user-images.githubusercontent.com/12632936/168202451-3f3f635d-38fa-42b8-be3d-edc5866ba174.png)
 
 ## Important
 Start the friday stream with "Frozen Pizza Friday" some where in the title
