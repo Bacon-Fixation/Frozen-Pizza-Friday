@@ -5,10 +5,11 @@ Start the friday stream with "Frozen Pizza Friday" some where in the title
 or any series of 3 words together the first letters produce F P F
 
 ### Features
+- Waits for 3 word messages from chat that are an FPF from Mods/Broadcaster Only 
 - Only Changes section of the stream title when an FPF is present 
 - Some built-In profanity filtering to Go With Twitch AutoMod
 - Only active during friday streams
-- Mods/Broadcaster Only 
+
 
 ### Installation
 1) Download the `FunPizzaFriday.js`
