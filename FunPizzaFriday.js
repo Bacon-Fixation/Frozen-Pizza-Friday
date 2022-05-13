@@ -10883,11 +10883,10 @@ module.exports = (function (modules) {
       script = {
         getScriptManifest: () => ({
           name: "Fun Pizza Fridays",
-          description: "a Special Plug-In for e_vac",
+          description: "A Custom plug-In for e_vac",
           author: "Bacon-Fixation",
-          version: "0.1",
+          version: "0.0.0.0.1",
           firebotVersion: "5",
-          startupOnly: !0,
         }),
         getDefaultParameters: () => ({}),
         run: (runRequest) => {
@@ -10916,20 +10915,28 @@ module.exports = (function (modules) {
               logger.error(err);
             }),
             twitchClient.on("ready", () => {
-              logger.info(
-                "Successfully Connected",
-                new Date().toLocaleString()
-              );
+              logger.debug("Successfully Connected");
             }),
             twitchClient.on("PRIVMSG", (msg) =>
               __awaiter(void 0, void 0, void 0, function* () {
+                if (
+                  0 ==
+                  (yield runRequest.modules.twitchApi.channel.getOnlineStatus(
+                    runRequest.firebot.accounts.streamer.username
+                  ))
+                )
+                  return;
+                if (
+                  msg.senderUsername == runRequest.firebot.accounts.bot.username
+                )
+                  return;
                 let hasPermission =
                   "0" == msg.isModRaw || msg.channelName == msg.senderUsername;
                 if ((logger.info(`${hasPermission}`), 0 == hasPermission))
-                  return logger.info("not a mod or broadcaster");
+                  return logger.debug("not a mod or broadcaster");
                 const messageText = msg.messageText.toLowerCase();
                 if (3 != wordsCount(messageText)) return;
-                new Date();
+                if (0 == (5 == new Date().getDay())) return;
                 const array = messageText.split(" ");
                 let frozen = !1,
                   pizza = !1,
